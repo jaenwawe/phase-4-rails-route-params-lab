@@ -5,4 +5,16 @@ class StudentsController < ApplicationController
     render json: students
   end
 
+
+  def record
+    record = Student.find(params[:id])
+    render json: record
+  end
+
+  def grades
+    students = Student.all.order(:grade)
+    render json: students
+  end
+
+
 end
